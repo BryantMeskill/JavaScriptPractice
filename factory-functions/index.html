@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>factory functions</title>
+  </head>
+  <body>
+    <script>
+      const personFactory = (name, age) => {
+        const sayHello = () => console.log("hello");
+        return { name, age, sayHello };
+      };
+
+      const bryant = personFactory("bryant", 28);
+      bryant.sayHello();
+
+      //constructor version of this factory function
+      //   const Person = (name, age) => {
+      //       this.name = name;
+      //       this.age = age;
+      //       this.sayHello = () => console.log("hello")
+      //   }
+
+      //   const new Person('bryant', 28);
+    </script>
+  </body>
+</html>
