@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Information</title>
+  </head>
+  <body>
+    <script>
+      function book(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.info = function () {
+          return `${title} by ${author} is ${pages} page(s) long. Read status: ${read}`;
+        };
+      }
+
+      const theHobbit = new book("The Hobbit", "J.R.R. Tolkien", "295", "read");
+      console.log(theHobbit.info());
+    </script>
+  </body>
+</html>
