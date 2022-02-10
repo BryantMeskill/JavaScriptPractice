@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   class User {
+      //     constructor(name) {
+      //       this.name = name;
+      //     }
+
+      //     sayHi() {
+      //       console.log(`Hi, ${this.name}`);
+      //     }
+      //   }
+      //   //when new User("Bryant") is called:
+      //   //1.) A new object is created.
+      //   //2.) The constructor runs with the given argument and assigns it to this.name
+      //   //3.) Then we can call object methods such as Bryant.sayHi()
+      //   bryant = new User("Bryant");
+      //   bryant.sayHi();
+
+      class User {
+        constructor(name) {
+          // invokes the setter
+          this.name = name;
+        }
+        //invoked when name property is looked up
+        get name() {
+          return this._name;
+        }
+        //invoked when new user is defined
+        set name(value) {
+          if (value.length < 4) {
+            alert("Name is too short.");
+            return;
+          }
+          this._name = value;
+        }
+      }
+
+      let user = new User("John");
+      alert(user.name); // John
+
+      user = new User(""); // Name is too short.
+    </script>
+  </body>
+</html>
