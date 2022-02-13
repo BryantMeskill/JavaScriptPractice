@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./Roboto-Medium.ttf") format("ttf"),
+    url("./BebasNeue-Regular.ttf") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+.hello {
+  color: white;
+  font-family: "Roboto";
+  font-size: 150px;
+  background: url("./icon.png");
+}
