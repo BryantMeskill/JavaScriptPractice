@@ -30,6 +30,7 @@ function Comment(props) {
   );
 }
 
+//data pulled from here
 const comment = {
   date: new Date(),
   text: "I hope you enjoy learning React!",
@@ -38,6 +39,7 @@ const comment = {
     avatarUrl: "http://placekitten.com/g/64/64",
   },
 };
+
 ReactDOM.render(
   <Comment date={comment.date} text={comment.text} author={comment.author} />,
   document.getElementById("root")
