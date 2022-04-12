@@ -49,8 +49,12 @@ class Counter extends React.Component {
     console.log("--------");
   }
 
+  //catches errors created by above components
+  componentDidCatch(error, info) {}
+
   render() {
     console.log("render");
+
     return (
       <div>
         <button onClick={this.increment}>Increment</button>
