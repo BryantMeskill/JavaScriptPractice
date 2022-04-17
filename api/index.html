@@ -8,8 +8,31 @@
   </head>
   <body>
     <div>
-      <h1 class="title">Hi! Open the console for practice.</h1>
+      <h1 class="title">Hi! Here's your dog gif.</h1>
+      <img src="#" />
+      <button class="click-for-dog">Click Me For New Gif</button>
     </div>
-    <script src="./promise.js"></script>
+    <script>
+      const img = document.querySelector("img");
+      const dogBtn = document.querySelector("button");
+      function postDoggyGif() {
+        fetch(
+          "https://api.giphy.com/v1/gifs/translate?api_key=CuO3OSGwkFKsVJRH8Gn2OqKMdjZxp4K0&s=dogs",
+          { mode: "cors" }
+        )
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (response) {
+            img.src = response.data.images.original.url;
+          });
+      }
+
+      postDoggyGif();
+
+      dogBtn.addEventListener("click", () => {
+        postDoggyGif();
+      });
+    </script>
   </body>
 </html>
