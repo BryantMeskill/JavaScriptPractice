@@ -15,17 +15,14 @@
     <script>
       const img = document.querySelector("img");
       const dogBtn = document.querySelector("button");
-      function postDoggyGif() {
-        fetch(
+      //await doesn't work on the global scope, so we must wrap the api call to Giphy in an async function
+      async function postDoggyGif() {
+        const response = await fetch(
           "https://api.giphy.com/v1/gifs/translate?api_key=CuO3OSGwkFKsVJRH8Gn2OqKMdjZxp4K0&s=dogs",
           { mode: "cors" }
-        )
-          .then(function (response) {
-            return response.json();
-          })
-          .then(function (response) {
-            img.src = response.data.images.original.url;
-          });
+        );
+        const dogData = await response.json();
+        img.src = response.data.images.original.url;
       }
 
       postDoggyGif();
