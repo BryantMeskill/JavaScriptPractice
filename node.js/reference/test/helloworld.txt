@@ -1,0 +1,2 @@
+Hello World! 
+This is additional text, added via the appendFile method of fs
